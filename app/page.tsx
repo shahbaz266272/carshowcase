@@ -22,7 +22,7 @@ export default function Home({ searchParams }: HomeProps) {
   const [model, setModel] = useState("");
   // filter states
   const [fuel, setFuel] = useState("");
-  const [year, setYear] = useState("2022");
+  const [year, setYear] = useState(2022);
   // pagination states
   const [limit, setLimit] = useState(10);
 
@@ -31,7 +31,7 @@ export default function Home({ searchParams }: HomeProps) {
     try {
       const result = await FetchCars({
         manufacturer: manufacturer || "",
-        year: year || "2022",
+        year: year || 2022,
         fuel: fuel || "",
         limit: limit || 10,
         model: model || "",
@@ -89,9 +89,9 @@ export default function Home({ searchParams }: HomeProps) {
               </div>
             )}
             <ShowMore
-              pageNumber={(limit) / 10}
-              isNext={(limit  ) > allCars.length}
-              setLimit = {setLimit}
+              pageNumber={limit / 10}
+              isNext={limit > allCars.length}
+              setLimit={setLimit}
             />
           </section>
         ) : (

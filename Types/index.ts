@@ -17,7 +17,7 @@ export interface CarProps {
 
 export interface FilterProps {
   manufacturer?: string;
-  year?: string;
+  year?: number;
   model?: string;
   limit?: number;
   fuel?: string;
@@ -52,10 +52,10 @@ export interface OptionProps {
   value: string;
 }
 
-export interface CustomFilterProps {
+export interface CustomFilterProps<T> {
   title: string;
   options: OptionProps[];
-  setFilter: (title: string) => void
+  setFilter: (title: T) => void
 }
 
 export interface ShowMoreProps {
